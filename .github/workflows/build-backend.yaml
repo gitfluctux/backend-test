@@ -19,5 +19,5 @@ jobs:
 
       - name: Push to Docker Hub
         run: |
-          docker login -u dockermahin --password-stdin ${{ secrets.DOCKER_PASSWORD }}
+          docker login -u dockermahin -p ${{ secrets.DOCKER_PASSWORD }}
           docker push dockermahin/fluctux-backend:2.3.1
