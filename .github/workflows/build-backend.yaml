@@ -17,5 +17,5 @@ jobs:
       - name: Build and push Docker images
         run: |
           docker build -t fluctux-backend:2.3.1 .
-          docker login -u dockermahin -p ${{secret: DOCKER_PASSWORD}}
+          docker login -u dockermahin -p ${{ secrets.DOCKER_PASSWORD }}
           docker push dockermahin/fluctux-backend:2.3.1
