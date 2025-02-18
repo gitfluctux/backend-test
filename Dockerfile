@@ -19,4 +19,5 @@ COPY --from=builder /build/dist dist/
 
 EXPOSE 4000
 
+
 CMD [ "npm", "start" ]
