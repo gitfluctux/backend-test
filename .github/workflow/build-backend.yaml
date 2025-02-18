@@ -1,1 +1,20 @@
-name: 
+name: Fluctux backend Docker image CI & CD
+
+on:
+  push:
+    branches:
+      main
+    paths:
+      - '/Dockerfile'
+  
+jobs:
+  publish_images:
+    runs-on: node:18.20-alpine
+    steps:
+      - name: checkout
+      uses: actions/checkout@v4
+      - name: Build and push Docker images
+      run: |
+        docker build -t fluctux-backend:2.3.1 .
+        docker login -u dockermahin -p ${{secret: DOCKER_PASSWORD}}
+        docker push dockermahin/fluctux-backend:2.3.1
