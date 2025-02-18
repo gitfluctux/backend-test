@@ -8,7 +8,6 @@ app.get("/", (req, res) => {
 })
 
 const RUNNING_PORT: { [key: number]: string } = {};
-const CONTAINER_PORT: { [key: string]: string } = {};
 
 app.post("/new", (req, res) => {
     
