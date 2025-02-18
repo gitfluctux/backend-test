@@ -9,15 +9,15 @@ on:
   
 jobs:
   publish_images:
-    runs-on: ubuntu-latest
+    runs-on: node:22-alpine
 
     steps:
 
       - name: checkout
-      uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Build and push Docker images
-      run: |
-        docker build -t fluctux-backend:2.3.1 .
-        docker login -u dockermahin -p ${{secret: DOCKER_PASSWORD}}
-        docker push dockermahin/fluctux-backend:2.3.1
+        run: |
+          docker build -t fluctux-backend:2.3.1 .
+          docker login -u dockermahin -p ${{secret: DOCKER_PASSWORD}}
+          docker push dockermahin/fluctux-backend:2.3.1
