@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker images
-        run: docker build -t fluctux-backend .
+        run: docker build -t dockermahin/fluctux-backend:2.3.1 .
 
       - name: Push to Docker Hub
         run: |
           docker login -u dockermahin -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push dockermahin/fluctux-backend
+          docker push dockermahin/fluctux-backend:2.3.1
