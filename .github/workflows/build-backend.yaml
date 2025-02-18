@@ -9,7 +9,7 @@ on:
   
 jobs:
   publish_images:
-    runs-on: node:16-alpine
+    runs-on: node:22-alpine
 
     steps:
 
