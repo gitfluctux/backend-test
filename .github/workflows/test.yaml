@@ -2,7 +2,7 @@ name: Test
 
 on:
   pull_request:
-    branches: ["fix/*", "fix/**"]
+    branches: ["fix/*", "fix/**", "main"]
 
 jobs:
   Test:
